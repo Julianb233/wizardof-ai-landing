@@ -11,6 +11,8 @@ import {
   Zap,
   Target,
   Sparkles,
+  Wand2,
+  Star,
 } from "lucide-react";
 
 const services = [
@@ -19,65 +21,138 @@ const services = [
     description: "Custom AI roadmaps that align with your business goals and drive scalable growth.",
     icon: Brain,
     size: "large",
+    color: "wizard-orange",
+    gradient: "from-wizard-orange to-hot-pink",
   },
   {
     title: "Backend Automation",
     description: "Streamline operations and boost productivity with intelligent automation systems.",
     icon: Cog,
     size: "medium",
+    color: "electric-purple",
+    gradient: "from-electric-purple to-neon-cyan",
   },
   {
     title: "Custom Bot Development",
     description: "AI-powered chatbots and assistants that engage customers 24/7.",
     icon: MessageSquareCode,
     size: "medium",
+    color: "neon-cyan",
+    gradient: "from-neon-cyan to-magic-gold",
   },
   {
     title: "Lead Qualification",
     description: "Automated lead scoring and nurturing that converts prospects into customers.",
     icon: Target,
     size: "small",
+    color: "hot-pink",
+    gradient: "from-hot-pink to-wizard-orange",
   },
   {
     title: "Executive AI Systems",
     description: "Enterprise-grade automation for C-suite decision support.",
     icon: Users,
     size: "small",
+    color: "magic-gold",
+    gradient: "from-magic-gold to-electric-purple",
   },
   {
     title: "Process Optimization",
     description: "Identify bottlenecks and implement AI solutions for maximum efficiency.",
     icon: TrendingUp,
     size: "small",
+    color: "wizard-orange",
+    gradient: "from-wizard-orange to-neon-cyan",
   },
   {
     title: "Marketing Automation",
     description: "AI-driven content and campaign automation that scales your reach.",
     icon: Zap,
     size: "medium",
+    color: "electric-purple",
+    gradient: "from-electric-purple to-hot-pink",
   },
   {
     title: "AI Integration",
     description: "Seamlessly integrate AI capabilities into your existing tech stack.",
     icon: Sparkles,
     size: "small",
+    color: "neon-cyan",
+    gradient: "from-neon-cyan to-wizard-orange",
   },
 ];
 
+const colorMap: Record<string, string> = {
+  "wizard-orange": "rgba(236, 67, 15, 0.5)",
+  "electric-purple": "rgba(168, 85, 247, 0.5)",
+  "neon-cyan": "rgba(34, 211, 238, 0.5)",
+  "hot-pink": "rgba(236, 72, 153, 0.5)",
+  "magic-gold": "rgba(251, 191, 36, 0.5)",
+};
+
 export function Services() {
   return (
-    <section id="services" className="py-24 md:py-32 relative">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="services" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Animated gradient background */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse 80% 50% at 50% 50%, rgba(168, 85, 247, 0.15) 0%, transparent 70%)",
+        }}
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.5, 0.8, 0.5],
+        }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Floating sparkles */}
+      {Array.from({ length: 20 }).map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute pointer-events-none"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            opacity: [0, 1, 0],
+            scale: [0, 1, 0],
+            y: [0, -50, -100],
+          }}
+          transition={{
+            duration: 3 + Math.random() * 2,
+            delay: Math.random() * 3,
+            repeat: Infinity,
+          }}
+        >
+          <Star className="w-3 h-3 text-magic-gold" fill="currentColor" />
+        </motion.div>
+      ))}
+
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Section header */}
         <ScrollReveal className="text-center mb-16">
-          <span className="text-sm uppercase tracking-wider text-tech-cyan mb-4 block">
-            The Spells I Cast
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Services & Solutions</span>
+          <motion.div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-vibrant mb-6"
+            animate={{
+              boxShadow: [
+                "0 0 20px rgba(168, 85, 247, 0.3)",
+                "0 0 40px rgba(168, 85, 247, 0.5)",
+                "0 0 20px rgba(168, 85, 247, 0.3)",
+              ],
+            }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <Wand2 className="w-4 h-4 text-electric-purple" />
+            <span className="text-sm font-semibold text-white">The Spells I Cast</span>
+            <Star className="w-4 h-4 text-magic-gold" fill="currentColor" />
+          </motion.div>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="gradient-text-aurora">Services & Solutions</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            From strategy to implementation, I offer end-to-end AI solutions that deliver real results.
+            From strategy to implementation, I offer <span className="text-electric-purple font-semibold">end-to-end AI solutions</span> that deliver real results.
           </p>
         </ScrollReveal>
 
@@ -94,33 +169,60 @@ export function Services() {
             return (
               <StaggerItem key={index}>
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className={`${gridClass} relative group`}
+                  className={`${gridClass} relative group h-full`}
                 >
-                  {/* Animated border */}
-                  <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-wizard-purple via-tech-cyan to-wizard-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-gradient" />
+                  {/* Animated glowing border */}
+                  <motion.div
+                    className={`absolute -inset-[2px] rounded-2xl bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                    animate={{
+                      backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                    style={{ backgroundSize: "200% 200%" }}
+                  />
+
+                  {/* Outer glow on hover */}
+                  <motion.div
+                    className="absolute -inset-2 rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-all duration-500"
+                    style={{ background: colorMap[service.color] }}
+                  />
 
                   {/* Card content */}
-                  <div className="relative h-full glass rounded-2xl p-6 flex flex-col">
-                    {/* Icon */}
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-wizard-purple/20 to-tech-cyan/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <service.icon className="w-6 h-6 text-wizard-gold" />
-                    </div>
+                  <div className="relative h-full glass-vibrant rounded-2xl p-6 flex flex-col border border-white/5">
+                    {/* Icon with vibrant background */}
+                    <motion.div
+                      className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+                      style={{ boxShadow: `0 0 25px ${colorMap[service.color]}` }}
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <service.icon className="w-7 h-7 text-white" />
+                    </motion.div>
 
                     {/* Content */}
-                    <h3 className="text-lg font-bold text-text-primary mb-2">
+                    <h3 className={`text-lg font-bold text-white mb-2 group-hover:text-${service.color} transition-colors`}>
                       {service.title}
                     </h3>
                     <p className="text-sm text-text-secondary flex-grow">
                       {service.description}
                     </p>
 
-                    {/* Hover indicator */}
-                    <div className="mt-4 flex items-center gap-2 text-xs text-text-muted opacity-0 group-hover:opacity-100 transition-opacity">
-                      <span className="w-1.5 h-1.5 rounded-full bg-wizard-gold animate-pulse" />
-                      Learn more
-                    </div>
+                    {/* Animated hover indicator */}
+                    <motion.div
+                      className="mt-4 flex items-center gap-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                      initial={{ x: -10 }}
+                      whileHover={{ x: 0 }}
+                    >
+                      <motion.span
+                        className={`w-2 h-2 rounded-full bg-${service.color}`}
+                        animate={{ scale: [1, 1.5, 1] }}
+                        transition={{ duration: 1, repeat: Infinity }}
+                        style={{ backgroundColor: colorMap[service.color]?.replace("0.5", "1") }}
+                      />
+                      <span className="text-white font-medium">Learn more</span>
+                    </motion.div>
                   </div>
                 </motion.div>
               </StaggerItem>
@@ -129,8 +231,17 @@ export function Services() {
         </StaggerContainer>
       </div>
 
-      {/* Background decoration */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-wizard-purple/30 to-transparent" />
+      {/* Bottom gradient line */}
+      <motion.div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px"
+        style={{
+          background: "linear-gradient(to right, transparent, rgba(168, 85, 247, 0.5), rgba(34, 211, 238, 0.5), rgba(236, 67, 15, 0.5), transparent)",
+        }}
+        animate={{
+          opacity: [0.3, 0.8, 0.3],
+        }}
+        transition={{ duration: 3, repeat: Infinity }}
+      />
     </section>
   );
 }

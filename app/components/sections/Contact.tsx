@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ScrollReveal } from "@/app/components/animations/ScrollReveal";
-import { Send, Sparkles, Mail, MessageSquare, User, Loader2 } from "lucide-react";
+import { Send, Sparkles, Mail, MessageSquare, User, Loader2, Calendar, Wand2, Star, Flame, Zap } from "lucide-react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -27,17 +27,91 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4">
+      {/* Vibrant gradient background */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `
+            radial-gradient(ellipse 80% 60% at 20% 80%, rgba(236, 67, 15, 0.25) 0%, transparent 50%),
+            radial-gradient(ellipse 80% 60% at 80% 20%, rgba(168, 85, 247, 0.25) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 40% at 50% 50%, rgba(34, 211, 238, 0.15) 0%, transparent 60%)
+          `,
+        }}
+      />
+
+      {/* Animated floating orbs */}
+      <motion.div
+        className="absolute top-10 right-20 w-72 h-72 rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(236, 67, 15, 0.4) 0%, transparent 70%)",
+        }}
+        animate={{
+          x: [0, 30, 0],
+          y: [0, -20, 0],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-10 left-20 w-96 h-96 rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%)",
+        }}
+        animate={{
+          x: [0, -40, 0],
+          y: [0, 30, 0],
+          scale: [1, 1.15, 1],
+        }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      />
+
+      {/* Floating stars */}
+      {Array.from({ length: 15 }).map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute pointer-events-none"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            opacity: [0, 1, 0],
+            scale: [0, 1, 0],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 3 + Math.random() * 2,
+            delay: Math.random() * 3,
+            repeat: Infinity,
+          }}
+        >
+          <Star className="w-3 h-3 text-magic-gold" fill="currentColor" />
+        </motion.div>
+      ))}
+
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Section header */}
         <ScrollReveal className="text-center mb-16">
-          <span className="text-sm uppercase tracking-wider text-wizard-gold mb-4 block">
-            Begin Your Journey
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Summon the Wizard</span>
+          <motion.div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-vibrant mb-6"
+            animate={{
+              boxShadow: [
+                "0 0 20px rgba(236, 67, 15, 0.3)",
+                "0 0 40px rgba(236, 67, 15, 0.5)",
+                "0 0 20px rgba(236, 67, 15, 0.3)",
+              ],
+            }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <Flame className="w-4 h-4 text-wizard-orange" />
+            <span className="text-sm font-semibold text-white">Begin Your Journey</span>
+            <Zap className="w-4 h-4 text-magic-gold" />
+          </motion.div>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="gradient-text-aurora">Summon the Wizard</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Ready to transform your business with AI magic? Let&apos;s create something extraordinary together.
+            Ready to transform your business with <span className="text-wizard-orange font-semibold">AI magic</span>? Let&apos;s create something <span className="text-electric-purple font-semibold">extraordinary</span> together.
           </p>
         </ScrollReveal>
 
@@ -45,55 +119,89 @@ export function Contact() {
           {/* Contact info */}
           <ScrollReveal direction="left" className="flex flex-col justify-center">
             <div className="space-y-8">
-              {/* Magic orb decoration */}
-              <div className="relative w-32 h-32 mx-auto md:mx-0">
+              {/* Magic orb decoration - VIBRANT */}
+              <div className="relative w-40 h-40 mx-auto md:mx-0">
                 <motion.div
                   animate={{
-                    scale: [1, 1.1, 1],
-                    opacity: [0.5, 0.8, 0.5],
+                    scale: [1, 1.3, 1],
+                    opacity: [0.6, 1, 0.6],
                   }}
                   transition={{
                     duration: 3,
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="absolute inset-0 rounded-full bg-gradient-to-br from-wizard-purple to-tech-cyan blur-xl"
+                  className="absolute inset-0 rounded-full blur-2xl"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(236, 67, 15, 0.6), rgba(168, 85, 247, 0.6), rgba(34, 211, 238, 0.6))",
+                  }}
                 />
-                <div className="relative w-full h-full rounded-full glass flex items-center justify-center">
-                  <Sparkles className="w-12 h-12 text-wizard-gold" />
-                </div>
+                <motion.div
+                  className="relative w-full h-full rounded-full glass-vibrant flex items-center justify-center border border-white/20"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                >
+                  <motion.div
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  >
+                    <Wand2 className="w-16 h-16 text-wizard-orange" />
+                  </motion.div>
+                </motion.div>
               </div>
 
               <div className="text-center md:text-left">
-                <h3 className="text-2xl font-bold text-text-primary mb-4">
+                <h3 className="text-2xl font-bold text-white mb-4">
                   Let&apos;s Work Together
                 </h3>
                 <p className="text-text-secondary mb-6">
-                  Whether you&apos;re looking for AI automation, executive solutions, or personal coaching, I&apos;m here to help you achieve extraordinary results.
+                  Whether you&apos;re looking for <span className="text-neon-cyan font-semibold">AI automation</span>, executive solutions, or personal coaching, I&apos;m here to help you achieve extraordinary results.
                 </p>
+
+                {/* Book a Call CTA - PRIMARY */}
+                <motion.a
+                  href="https://api.leadconnectorhq.com/widget/booking/LJlYwAZ7flnJCYpRDkoU"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-fire flex items-center justify-center gap-3 text-lg w-full mb-6"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Calendar className="w-6 h-6" />
+                  <span>Book a Free Discovery Call</span>
+                  <Sparkles className="w-5 h-5" />
+                </motion.a>
 
                 {/* Contact links */}
                 <div className="space-y-4">
-                  <a
+                  <motion.a
                     href="mailto:julian@aiacrobatics.com"
-                    className="flex items-center gap-3 text-text-secondary hover:text-text-primary transition-colors group"
+                    className="flex items-center gap-3 text-text-secondary hover:text-white transition-colors group p-3 rounded-xl glass-vibrant border border-white/10"
+                    whileHover={{ x: 10, scale: 1.02 }}
                   >
-                    <div className="w-10 h-10 rounded-lg bg-wizard-purple/20 flex items-center justify-center group-hover:bg-wizard-purple/30 transition-colors">
-                      <Mail className="w-5 h-5 text-wizard-purple" />
-                    </div>
-                    <span>julian@aiacrobatics.com</span>
-                  </a>
-                  <a
+                    <motion.div
+                      className="w-12 h-12 rounded-xl bg-gradient-to-br from-wizard-orange to-hot-pink flex items-center justify-center"
+                      style={{ boxShadow: "0 0 20px rgba(236, 67, 15, 0.4)" }}
+                    >
+                      <Mail className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <span className="font-medium">julian@aiacrobatics.com</span>
+                  </motion.a>
+                  <motion.a
                     href="https://aiacrobatics.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-text-secondary hover:text-text-primary transition-colors group"
+                    className="flex items-center gap-3 text-text-secondary hover:text-white transition-colors group p-3 rounded-xl glass-vibrant border border-white/10"
+                    whileHover={{ x: 10, scale: 1.02 }}
                   >
-                    <div className="w-10 h-10 rounded-lg bg-tech-cyan/20 flex items-center justify-center group-hover:bg-tech-cyan/30 transition-colors">
-                      <MessageSquare className="w-5 h-5 text-tech-cyan" />
-                    </div>
-                    <span>Book a consultation</span>
-                  </a>
+                    <motion.div
+                      className="w-12 h-12 rounded-xl bg-gradient-to-br from-neon-cyan to-electric-purple flex items-center justify-center"
+                      style={{ boxShadow: "0 0 20px rgba(34, 211, 238, 0.4)" }}
+                    >
+                      <MessageSquare className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <span className="font-medium">Visit AI Acrobatics</span>
+                  </motion.a>
                 </div>
               </div>
             </div>
@@ -102,10 +210,28 @@ export function Contact() {
           {/* Contact form */}
           <ScrollReveal direction="right">
             <div className="relative">
-              {/* Form glow */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-wizard-purple via-tech-cyan to-wizard-gold rounded-2xl blur opacity-20" />
+              {/* Animated gradient border */}
+              <motion.div
+                className="absolute -inset-[2px] rounded-2xl"
+                style={{
+                  background: "linear-gradient(135deg, #ec430f, #a855f7, #22d3ee, #fbbf24, #ec430f)",
+                  backgroundSize: "400% 400%",
+                }}
+                animate={{
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                }}
+                transition={{ duration: 5, repeat: Infinity }}
+              />
 
-              <div className="relative glass rounded-2xl p-8">
+              {/* Outer glow */}
+              <div
+                className="absolute -inset-4 rounded-3xl blur-2xl opacity-50"
+                style={{
+                  background: "linear-gradient(135deg, rgba(236, 67, 15, 0.3), rgba(168, 85, 247, 0.3), rgba(34, 211, 238, 0.3))",
+                }}
+              />
+
+              <div className="relative glass-vibrant rounded-2xl p-8 border border-white/10">
                 {isSubmitted ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -113,13 +239,14 @@ export function Contact() {
                     className="text-center py-12"
                   >
                     <motion.div
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 0.5 }}
-                      className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-wizard-purple to-tech-cyan flex items-center justify-center"
+                      animate={{ scale: [1, 1.2, 1], rotate: [0, 360, 360] }}
+                      transition={{ duration: 1 }}
+                      className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-wizard-orange via-electric-purple to-neon-cyan flex items-center justify-center"
+                      style={{ boxShadow: "0 0 40px rgba(168, 85, 247, 0.5)" }}
                     >
-                      <Sparkles className="w-10 h-10 text-white" />
+                      <Sparkles className="w-12 h-12 text-white" />
                     </motion.div>
-                    <h3 className="text-2xl font-bold text-text-primary mb-2">
+                    <h3 className="text-2xl font-bold text-white mb-2">
                       Message Sent!
                     </h3>
                     <p className="text-text-secondary">
@@ -130,17 +257,17 @@ export function Contact() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Name field */}
                     <div>
-                      <label className="block text-sm font-medium text-text-secondary mb-2">
+                      <label className="block text-sm font-medium text-white mb-2">
                         Your Name
                       </label>
                       <div className="relative">
-                        <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-text-muted" />
+                        <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-wizard-orange" />
                         <input
                           type="text"
                           required
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full pl-12 pr-4 py-3 bg-bg-darker border border-wizard-purple/20 rounded-xl text-text-primary placeholder-text-muted focus:outline-none focus:border-wizard-purple/50 transition-colors"
+                          className="w-full pl-12 pr-4 py-4 bg-bg-darker/80 border-2 border-wizard-orange/30 rounded-xl text-white placeholder-text-muted focus:outline-none focus:border-wizard-orange transition-colors"
                           placeholder="Enter your name"
                         />
                       </div>
@@ -148,17 +275,17 @@ export function Contact() {
 
                     {/* Email field */}
                     <div>
-                      <label className="block text-sm font-medium text-text-secondary mb-2">
+                      <label className="block text-sm font-medium text-white mb-2">
                         Email Address
                       </label>
                       <div className="relative">
-                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-text-muted" />
+                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-electric-purple" />
                         <input
                           type="email"
                           required
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full pl-12 pr-4 py-3 bg-bg-darker border border-wizard-purple/20 rounded-xl text-text-primary placeholder-text-muted focus:outline-none focus:border-wizard-purple/50 transition-colors"
+                          className="w-full pl-12 pr-4 py-4 bg-bg-darker/80 border-2 border-electric-purple/30 rounded-xl text-white placeholder-text-muted focus:outline-none focus:border-electric-purple transition-colors"
                           placeholder="you@example.com"
                         />
                       </div>
@@ -166,17 +293,17 @@ export function Contact() {
 
                     {/* Message field */}
                     <div>
-                      <label className="block text-sm font-medium text-text-secondary mb-2">
+                      <label className="block text-sm font-medium text-white mb-2">
                         Your Message
                       </label>
                       <div className="relative">
-                        <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-text-muted" />
+                        <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-neon-cyan" />
                         <textarea
                           required
                           rows={4}
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          className="w-full pl-12 pr-4 py-3 bg-bg-darker border border-wizard-purple/20 rounded-xl text-text-primary placeholder-text-muted focus:outline-none focus:border-wizard-purple/50 transition-colors resize-none"
+                          className="w-full pl-12 pr-4 py-4 bg-bg-darker/80 border-2 border-neon-cyan/30 rounded-xl text-white placeholder-text-muted focus:outline-none focus:border-neon-cyan transition-colors resize-none"
                           placeholder="Tell me about your project..."
                         />
                       </div>
@@ -188,17 +315,18 @@ export function Contact() {
                       disabled={isSubmitting}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full btn-magic flex items-center justify-center gap-2 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full btn-fire flex items-center justify-center gap-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed py-4"
                     >
                       {isSubmitting ? (
                         <>
-                          <Loader2 className="w-5 h-5 animate-spin" />
+                          <Loader2 className="w-6 h-6 animate-spin" />
                           Casting Spell...
                         </>
                       ) : (
                         <>
-                          <Send className="w-5 h-5" />
+                          <Send className="w-6 h-6" />
                           Send Message
+                          <Sparkles className="w-5 h-5" />
                         </>
                       )}
                     </motion.button>
@@ -209,10 +337,6 @@ export function Contact() {
           </ScrollReveal>
         </div>
       </div>
-
-      {/* Background decorations */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-wizard-purple/5 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
-      <div className="absolute top-1/3 right-0 w-64 h-64 bg-tech-cyan/5 rounded-full blur-3xl pointer-events-none" />
     </section>
   );
 }

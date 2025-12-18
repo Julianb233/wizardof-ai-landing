@@ -2,14 +2,15 @@
 
 import { motion } from "framer-motion";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/app/components/animations/ScrollReveal";
-import { Bot, Briefcase, Heart, ExternalLink } from "lucide-react";
+import { Bot, Briefcase, Heart, ExternalLink, Sparkles, Flame } from "lucide-react";
 
 const ventures = [
   {
     title: "AI Acrobatics",
     description: "AI-powered automation solutions that transform businesses. From lead qualification to backend automation, we make AI accessible for everyone.",
     icon: Bot,
-    color: "from-wizard-purple to-tech-blue",
+    gradient: "from-wizard-orange via-hot-pink to-electric-purple",
+    glowColor: "rgba(236, 67, 15, 0.4)",
     stats: "70% automation achieved",
     link: "https://aiacrobatics.com",
     highlights: ["AI Consulting", "Custom Bots", "Process Automation"],
@@ -18,7 +19,8 @@ const ventures = [
     title: "ExecTech AI",
     description: "Executive-grade AI automation systems. We help C-suite leaders reclaim 10+ hours per week and achieve 3x ROI within 6 months.",
     icon: Briefcase,
-    color: "from-tech-cyan to-wizard-purple",
+    gradient: "from-neon-cyan via-electric-purple to-hot-pink",
+    glowColor: "rgba(34, 211, 238, 0.4)",
     stats: "Featured in Forbes, Inc.",
     link: "https://exectechai.com",
     highlights: ["Calendar Optimization", "Decision Support", "Executive AI"],
@@ -27,7 +29,8 @@ const ventures = [
     title: "Peak Performance",
     description: "Personal freedom coaching rooted in 10+ years of experience. Helping entrepreneurs unlock their potential through mind, body, and spiritual development.",
     icon: Heart,
-    color: "from-wizard-gold to-tech-cyan",
+    gradient: "from-magic-gold via-wizard-orange to-hot-pink",
+    glowColor: "rgba(251, 191, 36, 0.4)",
     stats: "10+ years coaching",
     link: "https://julianbradley.com",
     highlights: ["1-on-1 Coaching", "Business Scaling", "Life Transformation"],
@@ -36,18 +39,61 @@ const ventures = [
 
 export function WhatIDo() {
   return (
-    <section id="ventures" className="py-24 md:py-32 relative">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="ventures" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Animated background orbs */}
+      <motion.div
+        className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(236, 67, 15, 0.3) 0%, transparent 70%)",
+        }}
+        animate={{
+          x: [0, 50, 0],
+          y: [0, -30, 0],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%)",
+        }}
+        animate={{
+          x: [0, -40, 0],
+          y: [0, 40, 0],
+          scale: [1, 1.15, 1],
+        }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      />
+      <motion.div
+        className="absolute top-1/2 left-1/2 w-[400px] h-[400px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2"
+        style={{
+          background: "radial-gradient(circle, rgba(34, 211, 238, 0.2) 0%, transparent 70%)",
+        }}
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.5, 0.8, 0.5],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Section header */}
         <ScrollReveal className="text-center mb-16">
-          <span className="text-sm uppercase tracking-wider text-wizard-gold mb-4 block">
-            The Magic I Create
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">What I Do</span>
+          <motion.div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-vibrant glow-orange mb-6"
+            animate={{ boxShadow: ["0 0 20px rgba(236, 67, 15, 0.3)", "0 0 40px rgba(236, 67, 15, 0.5)", "0 0 20px rgba(236, 67, 15, 0.3)"] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <Flame className="w-4 h-4 text-wizard-orange" />
+            <span className="text-sm font-semibold text-white">The Magic I Create</span>
+            <Sparkles className="w-4 h-4 text-magic-gold" />
+          </motion.div>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="gradient-text-aurora">What I Do</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Building AI-powered empires that transform how businesses operate and how people live.
+            Building <span className="text-wizard-orange font-semibold">AI-powered empires</span> that transform how businesses operate and how people live.
           </p>
         </ScrollReveal>
 
@@ -56,24 +102,39 @@ export function WhatIDo() {
           {ventures.map((venture, index) => (
             <StaggerItem key={index}>
               <motion.div
-                whileHover={{ y: -10, scale: 1.02 }}
+                whileHover={{ y: -15, scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="relative group h-full"
               >
-                {/* Card glow effect */}
-                <div className="absolute -inset-0.5 bg-gradient-to-r opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500 rounded-2xl"
-                  style={{ background: `linear-gradient(135deg, var(--wizard-purple), var(--tech-cyan))` }}
+                {/* Animated glow effect */}
+                <motion.div
+                  className="absolute -inset-1 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"
+                  style={{ background: `linear-gradient(135deg, ${venture.glowColor}, transparent)` }}
+                  animate={{
+                    scale: [1, 1.05, 1],
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
                 />
 
                 {/* Card content */}
-                <div className="relative h-full glass rounded-2xl p-8 flex flex-col">
-                  {/* Icon */}
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${venture.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <venture.icon className="w-7 h-7 text-white" />
-                  </div>
+                <div className="relative h-full glass-vibrant rounded-2xl p-8 flex flex-col border border-white/10 overflow-hidden">
+                  {/* Animated gradient border */}
+                  <motion.div
+                    className={`absolute inset-0 bg-gradient-to-r ${venture.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
+                  />
+
+                  {/* Icon with glow */}
+                  <motion.div
+                    className={`relative w-16 h-16 rounded-xl bg-gradient-to-br ${venture.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                    style={{ boxShadow: `0 0 30px ${venture.glowColor}` }}
+                    whileHover={{ rotate: [0, -10, 10, 0] }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <venture.icon className="w-8 h-8 text-white" />
+                  </motion.div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-text-primary mb-3">
+                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-wizard-orange transition-colors">
                     {venture.title}
                   </h3>
 
@@ -82,31 +143,37 @@ export function WhatIDo() {
                     {venture.description}
                   </p>
 
-                  {/* Highlights */}
+                  {/* Highlights with gradient pills */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {venture.highlights.map((highlight, i) => (
-                      <span
+                      <motion.span
                         key={i}
-                        className="px-3 py-1 text-xs rounded-full bg-wizard-purple/20 text-wizard-purple-light border border-wizard-purple/30"
+                        className={`px-3 py-1 text-xs rounded-full bg-gradient-to-r ${venture.gradient} bg-opacity-20 text-white border border-white/20`}
+                        whileHover={{ scale: 1.1 }}
                       >
                         {highlight}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
 
                   {/* Stats badge */}
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-wizard-gold font-medium">
+                    <motion.span
+                      className="text-sm text-magic-gold font-bold"
+                      animate={{ textShadow: ["0 0 10px rgba(251, 191, 36, 0.5)", "0 0 20px rgba(251, 191, 36, 0.8)", "0 0 10px rgba(251, 191, 36, 0.5)"] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
                       {venture.stats}
-                    </span>
-                    <a
+                    </motion.span>
+                    <motion.a
                       href={venture.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-text-muted hover:text-text-primary transition-colors"
+                      className="flex items-center gap-2 text-sm text-neon-cyan hover:text-white transition-colors font-medium"
+                      whileHover={{ x: 5 }}
                     >
                       Visit <ExternalLink className="w-4 h-4" />
-                    </a>
+                    </motion.a>
                   </div>
                 </div>
               </motion.div>
@@ -114,10 +181,6 @@ export function WhatIDo() {
           ))}
         </StaggerContainer>
       </div>
-
-      {/* Background decoration */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-wizard-purple/10 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
-      <div className="absolute top-1/3 right-0 w-64 h-64 bg-tech-cyan/10 rounded-full blur-3xl pointer-events-none" />
     </section>
   );
 }
