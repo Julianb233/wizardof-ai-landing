@@ -1,26 +1,242 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Magic/Wizard Colors */
+  --wizard-purple: oklch(0.45 0.18 280);
+  --wizard-purple-light: oklch(0.60 0.15 280);
+  --wizard-gold: oklch(0.75 0.15 80);
+  --wizard-gold-bright: oklch(0.85 0.12 80);
+
+  /* Tech/AI Colors */
+  --tech-cyan: oklch(0.70 0.15 195);
+  --tech-blue: oklch(0.55 0.18 250);
+  --tech-blue-light: oklch(0.75 0.12 250);
+
+  /* Backgrounds */
+  --bg-dark: oklch(0.08 0.02 280);
+  --bg-darker: oklch(0.05 0.02 280);
+  --bg-card: oklch(0.12 0.03 280);
+
+  /* Text */
+  --text-primary: oklch(0.95 0.01 80);
+  --text-secondary: oklch(0.70 0.02 250);
+  --text-muted: oklch(0.55 0.02 280);
+
+  /* Gradients */
+  --gradient-magic: linear-gradient(135deg, var(--wizard-purple) 0%, var(--tech-cyan) 100%);
+  --gradient-gold: linear-gradient(135deg, var(--wizard-gold) 0%, var(--wizard-gold-bright) 100%);
+
+  /* Glows */
+  --glow-purple: 0 0 40px oklch(0.45 0.18 280 / 0.5);
+  --glow-cyan: 0 0 40px oklch(0.70 0.15 195 / 0.5);
+  --glow-gold: 0 0 40px oklch(0.75 0.15 80 / 0.5);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-wizard-purple: var(--wizard-purple);
+  --color-wizard-purple-light: var(--wizard-purple-light);
+  --color-wizard-gold: var(--wizard-gold);
+  --color-wizard-gold-bright: var(--wizard-gold-bright);
+  --color-tech-cyan: var(--tech-cyan);
+  --color-tech-blue: var(--tech-blue);
+  --color-tech-blue-light: var(--tech-blue-light);
+  --color-bg-dark: var(--bg-dark);
+  --color-bg-darker: var(--bg-darker);
+  --color-bg-card: var(--bg-card);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-darker);
+  color: var(--text-primary);
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--wizard-purple);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--wizard-purple-light);
+}
+
+/* Selection styling */
+::selection {
+  background: oklch(0.45 0.18 280 / 0.3);
+  color: var(--text-primary);
+}
+
+/* Animation utilities */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes particle-float {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 1; }
+  25% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
+  50% { transform: translateY(-10px) translateX(-5px); opacity: 1; }
+  75% { transform: translateY(-30px) translateX(15px); opacity: 0.6; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* Glow effects */
+.glow-purple {
+  box-shadow: var(--glow-purple);
+}
+
+.glow-cyan {
+  box-shadow: var(--glow-cyan);
+}
+
+.glow-gold {
+  box-shadow: var(--glow-gold);
+}
+
+.glow-magic {
+  box-shadow:
+    0 0 20px oklch(0.45 0.18 280 / 0.4),
+    0 0 40px oklch(0.70 0.15 195 / 0.2),
+    0 0 60px oklch(0.75 0.15 80 / 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--wizard-gold) 0%, var(--tech-cyan) 50%, var(--wizard-purple-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+  background: oklch(0.12 0.03 280 / 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid oklch(0.45 0.18 280 / 0.2);
+}
+
+/* Particle container */
+.particle-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Hero background */
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, oklch(0.45 0.18 280 / 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 70% 80%, oklch(0.70 0.15 195 / 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 30% at 20% 60%, oklch(0.75 0.15 80 / 0.1) 0%, transparent 50%),
+    var(--bg-darker);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 20px 40px oklch(0 0 0 / 0.3),
+    0 0 30px oklch(0.45 0.18 280 / 0.2);
+}
+
+/* Button styles */
+.btn-magic {
+  position: relative;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, var(--wizard-purple) 0%, var(--tech-blue) 100%);
+  border: none;
+  border-radius: 9999px;
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.btn-magic::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, var(--wizard-gold) 0%, var(--tech-cyan) 50%, var(--wizard-purple-light) 100%);
+  border-radius: 9999px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-magic:hover::before {
+  opacity: 1;
+}
+
+.btn-magic:hover {
+  transform: scale(1.05);
+  box-shadow: var(--glow-purple);
+}
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--wizard-purple) 50%, transparent 100%);
+  opacity: 0.3;
 }
