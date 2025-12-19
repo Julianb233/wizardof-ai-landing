@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#ventures", label: "Ventures" },
@@ -43,12 +44,13 @@ export function Navigation() {
           >
             {/* Logo */}
             <a href="#" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-wizard-purple to-tech-cyan flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Sparkles className="w-5 h-5 text-white" />
-              </div>
-              <span className="font-bold text-xl text-text-primary hidden sm:block">
-                TheWizzardOf<span className="text-wizard-gold">.ai</span>
-              </span>
+              <Image
+                src="/images/wizard-of-ai-logo.png"
+                alt="The Wizard of AI"
+                width={200}
+                height={50}
+                className="h-10 w-auto group-hover:scale-105 transition-transform"
+              />
             </a>
 
             {/* Desktop navigation */}
