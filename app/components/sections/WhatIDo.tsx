@@ -2,15 +2,15 @@
 
 import { motion } from "framer-motion";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/app/components/animations/ScrollReveal";
-import { Bot, Briefcase, Heart, ExternalLink, Sparkles, Flame } from "lucide-react";
+import { Bot, Briefcase, Heart, ExternalLink, Sparkles, Star } from "lucide-react";
 
 const ventures = [
   {
     title: "AI Acrobatics",
     description: "AI-powered automation solutions that transform businesses. From lead qualification to backend automation, we make AI accessible for everyone.",
     icon: Bot,
-    gradient: "from-wizard-orange via-hot-pink to-electric-purple",
-    glowColor: "rgba(236, 67, 15, 0.4)",
+    gradient: "from-cosmic-cyan via-nebula-purple to-cosmic-pink",
+    glowColor: "rgba(34, 211, 238, 0.5)",
     stats: "70% automation achieved",
     link: "https://aiacrobatics.com",
     highlights: ["AI Consulting", "Custom Bots", "Process Automation"],
@@ -19,8 +19,8 @@ const ventures = [
     title: "ExecTech AI",
     description: "Executive-grade AI automation systems. We help C-suite leaders reclaim 10+ hours per week and achieve 3x ROI within 6 months.",
     icon: Briefcase,
-    gradient: "from-neon-cyan via-electric-purple to-hot-pink",
-    glowColor: "rgba(34, 211, 238, 0.4)",
+    gradient: "from-nebula-purple via-cosmic-pink to-cosmic-magenta",
+    glowColor: "rgba(168, 85, 247, 0.5)",
     stats: "Featured in Forbes, Inc.",
     link: "https://exectechai.com",
     highlights: ["Calendar Optimization", "Decision Support", "Executive AI"],
@@ -29,8 +29,8 @@ const ventures = [
     title: "Peak Performance",
     description: "Personal freedom coaching rooted in 10+ years of experience. Helping entrepreneurs unlock their potential through mind, body, and spiritual development.",
     icon: Heart,
-    gradient: "from-magic-gold via-wizard-orange to-hot-pink",
-    glowColor: "rgba(251, 191, 36, 0.4)",
+    gradient: "from-cosmic-pink via-cosmic-magenta to-cosmic-cyan",
+    glowColor: "rgba(236, 72, 153, 0.5)",
     stats: "10+ years coaching",
     link: "https://julianbradley.com",
     highlights: ["1-on-1 Coaching", "Business Scaling", "Life Transformation"],
@@ -40,11 +40,11 @@ const ventures = [
 export function WhatIDo() {
   return (
     <section id="ventures" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Animated background orbs */}
+      {/* Cosmic background orbs */}
       <motion.div
         className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(236, 67, 15, 0.3) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(34, 211, 238, 0.3) 0%, transparent 70%)",
         }}
         animate={{
           x: [0, 50, 0],
@@ -68,7 +68,7 @@ export function WhatIDo() {
       <motion.div
         className="absolute top-1/2 left-1/2 w-[400px] h-[400px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2"
         style={{
-          background: "radial-gradient(circle, rgba(34, 211, 238, 0.2) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%)",
         }}
         animate={{
           scale: [1, 1.3, 1],
@@ -81,19 +81,19 @@ export function WhatIDo() {
         {/* Section header */}
         <ScrollReveal className="text-center mb-16">
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-vibrant glow-orange mb-6"
-            animate={{ boxShadow: ["0 0 20px rgba(236, 67, 15, 0.3)", "0 0 40px rgba(236, 67, 15, 0.5)", "0 0 20px rgba(236, 67, 15, 0.3)"] }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-cosmic mb-6"
+            animate={{ boxShadow: ["0 0 20px rgba(34, 211, 238, 0.3)", "0 0 40px rgba(34, 211, 238, 0.5)", "0 0 20px rgba(34, 211, 238, 0.3)"] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <Flame className="w-4 h-4 text-wizard-orange" />
+            <Star className="w-4 h-4 text-cosmic-cyan" fill="currentColor" />
             <span className="text-sm font-semibold text-white">The Magic I Create</span>
-            <Sparkles className="w-4 h-4 text-magic-gold" />
+            <Sparkles className="w-4 h-4 text-cosmic-pink" />
           </motion.div>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="gradient-text-aurora">What I Do</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Building <span className="text-wizard-orange font-semibold">AI-powered empires</span> that transform how businesses operate and how people live.
+            Building <span className="text-cosmic-cyan font-semibold">AI-powered empires</span> that transform how businesses operate and how people live.
           </p>
         </ScrollReveal>
 
@@ -117,7 +117,7 @@ export function WhatIDo() {
                 />
 
                 {/* Card content */}
-                <div className="relative h-full glass-vibrant rounded-2xl p-8 flex flex-col border border-white/10 overflow-hidden">
+                <div className="relative h-full glass-cosmic rounded-2xl p-8 flex flex-col border border-white/10 overflow-hidden">
                   {/* Animated gradient border */}
                   <motion.div
                     className={`absolute inset-0 bg-gradient-to-r ${venture.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
@@ -134,7 +134,7 @@ export function WhatIDo() {
                   </motion.div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-wizard-orange transition-colors">
+                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cosmic-cyan transition-colors">
                     {venture.title}
                   </h3>
 
@@ -159,7 +159,7 @@ export function WhatIDo() {
                   {/* Stats badge */}
                   <div className="flex items-center justify-between">
                     <motion.span
-                      className="text-sm text-magic-gold font-bold"
+                      className="text-sm text-cosmic-gold font-bold"
                       animate={{ textShadow: ["0 0 10px rgba(251, 191, 36, 0.5)", "0 0 20px rgba(251, 191, 36, 0.8)", "0 0 10px rgba(251, 191, 36, 0.5)"] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
@@ -169,7 +169,7 @@ export function WhatIDo() {
                       href={venture.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-neon-cyan hover:text-white transition-colors font-medium"
+                      className="flex items-center gap-2 text-sm text-cosmic-cyan hover:text-white transition-colors font-medium"
                       whileHover={{ x: 5 }}
                     >
                       Visit <ExternalLink className="w-4 h-4" />

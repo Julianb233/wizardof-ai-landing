@@ -21,74 +21,66 @@ const services = [
     description: "Custom AI roadmaps that align with your business goals and drive scalable growth.",
     icon: Brain,
     size: "large",
-    color: "wizard-orange",
-    gradient: "from-wizard-orange to-hot-pink",
+    gradient: "from-cosmic-cyan to-nebula-purple",
+    glow: "rgba(34, 211, 238, 0.5)",
   },
   {
     title: "Backend Automation",
     description: "Streamline operations and boost productivity with intelligent automation systems.",
     icon: Cog,
     size: "medium",
-    color: "electric-purple",
-    gradient: "from-electric-purple to-neon-cyan",
+    gradient: "from-nebula-purple to-cosmic-pink",
+    glow: "rgba(168, 85, 247, 0.5)",
   },
   {
     title: "Custom Bot Development",
     description: "AI-powered chatbots and assistants that engage customers 24/7.",
     icon: MessageSquareCode,
     size: "medium",
-    color: "neon-cyan",
-    gradient: "from-neon-cyan to-magic-gold",
+    gradient: "from-cosmic-pink to-cosmic-magenta",
+    glow: "rgba(236, 72, 153, 0.5)",
   },
   {
     title: "Lead Qualification",
     description: "Automated lead scoring and nurturing that converts prospects into customers.",
     icon: Target,
     size: "small",
-    color: "hot-pink",
-    gradient: "from-hot-pink to-wizard-orange",
+    gradient: "from-cosmic-magenta to-cosmic-cyan",
+    glow: "rgba(232, 121, 249, 0.5)",
   },
   {
     title: "Executive AI Systems",
     description: "Enterprise-grade automation for C-suite decision support.",
     icon: Users,
     size: "small",
-    color: "magic-gold",
-    gradient: "from-magic-gold to-electric-purple",
+    gradient: "from-cosmic-cyan to-cosmic-pink",
+    glow: "rgba(34, 211, 238, 0.5)",
   },
   {
     title: "Process Optimization",
     description: "Identify bottlenecks and implement AI solutions for maximum efficiency.",
     icon: TrendingUp,
     size: "small",
-    color: "wizard-orange",
-    gradient: "from-wizard-orange to-neon-cyan",
+    gradient: "from-nebula-purple to-cosmic-cyan",
+    glow: "rgba(168, 85, 247, 0.5)",
   },
   {
     title: "Marketing Automation",
     description: "AI-driven content and campaign automation that scales your reach.",
     icon: Zap,
     size: "medium",
-    color: "electric-purple",
-    gradient: "from-electric-purple to-hot-pink",
+    gradient: "from-cosmic-pink to-nebula-purple",
+    glow: "rgba(236, 72, 153, 0.5)",
   },
   {
     title: "AI Integration",
     description: "Seamlessly integrate AI capabilities into your existing tech stack.",
     icon: Sparkles,
     size: "small",
-    color: "neon-cyan",
-    gradient: "from-neon-cyan to-wizard-orange",
+    gradient: "from-cosmic-cyan via-nebula-purple to-cosmic-pink",
+    glow: "rgba(34, 211, 238, 0.5)",
   },
 ];
-
-const colorMap: Record<string, string> = {
-  "wizard-orange": "rgba(236, 67, 15, 0.5)",
-  "electric-purple": "rgba(168, 85, 247, 0.5)",
-  "neon-cyan": "rgba(34, 211, 238, 0.5)",
-  "hot-pink": "rgba(236, 72, 153, 0.5)",
-  "magic-gold": "rgba(251, 191, 36, 0.5)",
-};
 
 export function Services() {
   return (
@@ -126,7 +118,7 @@ export function Services() {
             repeat: Infinity,
           }}
         >
-          <Star className="w-3 h-3 text-magic-gold" fill="currentColor" />
+          <Star className="w-3 h-3 text-cosmic-cyan" fill="currentColor" />
         </motion.div>
       ))}
 
@@ -134,7 +126,7 @@ export function Services() {
         {/* Section header */}
         <ScrollReveal className="text-center mb-16">
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-vibrant mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-cosmic mb-6"
             animate={{
               boxShadow: [
                 "0 0 20px rgba(168, 85, 247, 0.3)",
@@ -144,15 +136,15 @@ export function Services() {
             }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <Wand2 className="w-4 h-4 text-electric-purple" />
+            <Wand2 className="w-4 h-4 text-nebula-purple" />
             <span className="text-sm font-semibold text-white">The Spells I Cast</span>
-            <Star className="w-4 h-4 text-magic-gold" fill="currentColor" />
+            <Star className="w-4 h-4 text-cosmic-cyan" fill="currentColor" />
           </motion.div>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="gradient-text-aurora">Services & Solutions</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            From strategy to implementation, I offer <span className="text-electric-purple font-semibold">end-to-end AI solutions</span> that deliver real results.
+            From strategy to implementation, I offer <span className="text-nebula-purple font-semibold">end-to-end AI solutions</span> that deliver real results.
           </p>
         </ScrollReveal>
 
@@ -186,15 +178,15 @@ export function Services() {
                   {/* Outer glow on hover */}
                   <motion.div
                     className="absolute -inset-2 rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-all duration-500"
-                    style={{ background: colorMap[service.color] }}
+                    style={{ background: service.glow }}
                   />
 
                   {/* Card content */}
-                  <div className="relative h-full glass-vibrant rounded-2xl p-6 flex flex-col border border-white/5">
+                  <div className="relative h-full glass-cosmic rounded-2xl p-6 flex flex-col border border-white/5">
                     {/* Icon with vibrant background */}
                     <motion.div
                       className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
-                      style={{ boxShadow: `0 0 25px ${colorMap[service.color]}` }}
+                      style={{ boxShadow: `0 0 25px ${service.glow}` }}
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
                     >
@@ -202,7 +194,7 @@ export function Services() {
                     </motion.div>
 
                     {/* Content */}
-                    <h3 className={`text-lg font-bold text-white mb-2 group-hover:text-${service.color} transition-colors`}>
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cosmic-cyan transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-sm text-text-secondary flex-grow">
@@ -216,10 +208,10 @@ export function Services() {
                       whileHover={{ x: 0 }}
                     >
                       <motion.span
-                        className={`w-2 h-2 rounded-full bg-${service.color}`}
+                        className="w-2 h-2 rounded-full"
                         animate={{ scale: [1, 1.5, 1] }}
                         transition={{ duration: 1, repeat: Infinity }}
-                        style={{ backgroundColor: colorMap[service.color]?.replace("0.5", "1") }}
+                        style={{ backgroundColor: service.glow.replace("0.5", "1") }}
                       />
                       <span className="text-white font-medium">Learn more</span>
                     </motion.div>
@@ -235,7 +227,7 @@ export function Services() {
       <motion.div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px"
         style={{
-          background: "linear-gradient(to right, transparent, rgba(168, 85, 247, 0.5), rgba(34, 211, 238, 0.5), rgba(236, 67, 15, 0.5), transparent)",
+          background: "linear-gradient(to right, transparent, rgba(34, 211, 238, 0.5), rgba(168, 85, 247, 0.5), rgba(236, 72, 153, 0.5), transparent)",
         }}
         animate={{
           opacity: [0.3, 0.8, 0.3],

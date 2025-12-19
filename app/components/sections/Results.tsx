@@ -6,10 +6,10 @@ import { CounterAnimation, PercentageCounter } from "@/app/components/animations
 import { Quote, Star, Trophy, TrendingUp, Sparkles } from "lucide-react";
 
 const stats = [
-  { value: 70, suffix: "%", label: "Automation Achieved", description: "Average process automation for clients", color: "wizard-orange", glow: "rgba(236, 67, 15, 0.5)" },
-  { value: 40, suffix: "%", label: "Client Growth", description: "Average increase in new clients", color: "electric-purple", glow: "rgba(168, 85, 247, 0.5)" },
-  { value: 65, suffix: "%", label: "Engagement Boost", description: "Content strategy optimization results", color: "neon-cyan", glow: "rgba(34, 211, 238, 0.5)" },
-  { value: 10, suffix: "+", label: "Years Experience", description: "Delivering AI solutions", color: "magic-gold", glow: "rgba(251, 191, 36, 0.5)" },
+  { value: 70, suffix: "%", label: "Automation Achieved", description: "Average process automation for clients", glow: "rgba(34, 211, 238, 0.6)" },
+  { value: 40, suffix: "%", label: "Client Growth", description: "Average increase in new clients", glow: "rgba(168, 85, 247, 0.6)" },
+  { value: 65, suffix: "%", label: "Engagement Boost", description: "Content strategy optimization results", glow: "rgba(236, 72, 153, 0.6)" },
+  { value: 10, suffix: "+", label: "Years Experience", description: "Delivering AI solutions", glow: "rgba(232, 121, 249, 0.6)" },
 ];
 
 const testimonials = [
@@ -17,32 +17,32 @@ const testimonials = [
     quote: "Julian automated over 70% of our lead qualification process, resulting in a 40% increase in new clients.",
     author: "Marketing Agency CEO",
     role: "AI Acrobatics Client",
-    gradient: "from-wizard-orange to-hot-pink",
+    gradient: "from-cosmic-cyan to-nebula-purple",
   },
   {
     quote: "The executive AI system gave me back 15 hours a week. I can finally focus on strategic decisions.",
     author: "Tech Startup Founder",
     role: "ExecTech AI Client",
-    gradient: "from-electric-purple to-neon-cyan",
+    gradient: "from-nebula-purple to-cosmic-pink",
   },
   {
     quote: "His coaching transformed not just my business, but my entire approach to life and success.",
     author: "Entrepreneur",
     role: "Peak Performance Client",
-    gradient: "from-neon-cyan to-magic-gold",
+    gradient: "from-cosmic-pink to-cosmic-magenta",
   },
 ];
 
 export function Results() {
   return (
     <section id="results" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Vibrant gradient background */}
+      {/* Cosmic gradient background */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background: `
-            radial-gradient(ellipse 100% 50% at 0% 50%, rgba(236, 67, 15, 0.15) 0%, transparent 50%),
-            radial-gradient(ellipse 100% 50% at 100% 50%, rgba(34, 211, 238, 0.15) 0%, transparent 50%),
+            radial-gradient(ellipse 100% 50% at 0% 50%, rgba(34, 211, 238, 0.15) 0%, transparent 50%),
+            radial-gradient(ellipse 100% 50% at 100% 50%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
             radial-gradient(ellipse 50% 80% at 50% 100%, rgba(168, 85, 247, 0.2) 0%, transparent 60%)
           `,
         }}
@@ -57,7 +57,7 @@ export function Results() {
         }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <Trophy className="w-8 h-8 text-magic-gold opacity-40" />
+        <Trophy className="w-8 h-8 text-cosmic-gold opacity-40" />
       </motion.div>
       <motion.div
         className="absolute bottom-20 right-10 pointer-events-none"
@@ -67,14 +67,14 @@ export function Results() {
         }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       >
-        <TrendingUp className="w-10 h-10 text-neon-cyan opacity-40" />
+        <TrendingUp className="w-10 h-10 text-cosmic-cyan opacity-40" />
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Section header */}
         <ScrollReveal className="text-center mb-16">
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-vibrant mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-cosmic mb-6"
             animate={{
               boxShadow: [
                 "0 0 20px rgba(251, 191, 36, 0.3)",
@@ -84,15 +84,15 @@ export function Results() {
             }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <Trophy className="w-4 h-4 text-magic-gold" />
+            <Trophy className="w-4 h-4 text-cosmic-gold" />
             <span className="text-sm font-semibold text-white">The Grimoire</span>
-            <Sparkles className="w-4 h-4 text-wizard-orange" />
+            <Sparkles className="w-4 h-4 text-cosmic-cyan" />
           </motion.div>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="gradient-text-aurora">Proven Results</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Real numbers from real transformations. See what <span className="text-magic-gold font-semibold">magic</span> can do for your business.
+            Real numbers from real transformations. See what <span className="text-cosmic-gold font-semibold">magic</span> can do for your business.
           </p>
         </ScrollReveal>
 
@@ -111,11 +111,11 @@ export function Results() {
                   style={{ background: stat.glow }}
                 />
 
-                <div className="relative text-center p-6 glass-vibrant rounded-2xl border border-white/10">
+                <div className="relative text-center p-6 glass-cosmic rounded-2xl border border-white/10">
                   <motion.div
-                    className={`text-5xl md:text-6xl font-bold mb-2`}
+                    className="text-5xl md:text-6xl font-bold mb-2"
                     style={{
-                      color: stat.glow.replace("0.5", "1"),
+                      color: stat.glow.replace("0.6", "1"),
                       textShadow: `0 0 40px ${stat.glow}`,
                     }}
                     animate={{
@@ -150,7 +150,7 @@ export function Results() {
           <h3 className="text-3xl font-bold text-center mb-12">
             <span className="text-white">Client </span>
             <motion.span
-              className="text-magic-gold"
+              className="text-cosmic-gold"
               animate={{
                 textShadow: [
                   "0 0 10px rgba(251, 191, 36, 0.5)",
@@ -179,9 +179,9 @@ export function Results() {
                 />
 
                 {/* Glow effect */}
-                <div className="absolute -inset-2 bg-gradient-to-r from-electric-purple/20 to-neon-cyan/20 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500 rounded-2xl" />
+                <div className="absolute -inset-2 bg-gradient-to-r from-cosmic-cyan/20 via-nebula-purple/20 to-cosmic-pink/20 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500 rounded-2xl" />
 
-                <div className="relative h-full glass-vibrant rounded-2xl p-6 flex flex-col border border-white/10">
+                <div className="relative h-full glass-cosmic rounded-2xl p-6 flex flex-col border border-white/10">
                   {/* Quote icon with gradient */}
                   <motion.div
                     className={`w-12 h-12 rounded-xl bg-gradient-to-br ${testimonial.gradient} flex items-center justify-center mb-4`}
@@ -200,7 +200,7 @@ export function Results() {
                   <div className="flex items-center gap-3">
                     <motion.div
                       className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.gradient} flex items-center justify-center`}
-                      animate={{ boxShadow: ["0 0 15px rgba(168, 85, 247, 0.3)", "0 0 25px rgba(168, 85, 247, 0.5)", "0 0 15px rgba(168, 85, 247, 0.3)"] }}
+                      animate={{ boxShadow: ["0 0 15px rgba(34, 211, 238, 0.3)", "0 0 25px rgba(168, 85, 247, 0.5)", "0 0 15px rgba(34, 211, 238, 0.3)"] }}
                       transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
                     >
                       <Star className="w-6 h-6 text-white" fill="currentColor" />
@@ -209,7 +209,7 @@ export function Results() {
                       <div className="text-sm font-bold text-white">
                         {testimonial.author}
                       </div>
-                      <div className="text-xs text-neon-cyan">
+                      <div className="text-xs text-cosmic-cyan">
                         {testimonial.role}
                       </div>
                     </div>
