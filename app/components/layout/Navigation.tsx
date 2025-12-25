@@ -6,11 +6,13 @@ import { Menu, X, Sparkles } from "lucide-react";
 import Image from "next/image";
 
 const navLinks = [
-  { href: "#ventures", label: "Ventures" },
+  { href: "#ventures", label: "What I Do" },
+  { href: "#audience", label: "Who I Serve" },
   { href: "#services", label: "Services" },
+  { href: "/templates", label: "Templates" },
   { href: "#results", label: "Results" },
-  { href: "#press", label: "Press" },
   { href: "#contact", label: "Contact" },
+  { href: "/login", label: "Login" },
 ];
 
 export function Navigation() {

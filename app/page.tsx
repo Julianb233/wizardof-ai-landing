@@ -1,6 +1,7 @@
 import { Navigation } from "@/app/components/layout/Navigation";
 import { Hero } from "@/app/components/sections/Hero";
 import { WhatIDo } from "@/app/components/sections/WhatIDo";
+import { WhoIServe } from "@/app/components/sections/WhoIServe";
 import { Services } from "@/app/components/sections/Services";
 import { Results } from "@/app/components/sections/Results";
 import { GoldenTicket } from "@/app/components/sections/GoldenTicket";
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <Hero />
         <WhatIDo />
+        <WhoIServe />
         <Services />
         <Results />
         <GoldenTicket />
