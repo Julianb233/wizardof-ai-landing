@@ -19,38 +19,56 @@ export function Footer() {
   return (
     <footer className="py-16 border-t border-wizard-purple/10">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <a href="#" className="flex items-center gap-2 mb-4">
+        {/* Top section - Profile and Heading */}
+        <div className="text-center mb-16">
+          <div className="flex flex-col items-center gap-6">
+            {/* Profile Image */}
+            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-wizard-purple/30">
               <Image
-                src="/images/wizard-of-ai-logo.png"
-                alt="The Wizard of AI"
-                width={200}
-                height={50}
-                className="h-10 w-auto"
+                src="/images/wizard-of-ai-profile.png"
+                alt="Julian Bradley - The Wizard of AI"
+                width={96}
+                height={96}
+                className="object-cover"
               />
-            </a>
-            <p className="text-text-secondary max-w-md mb-6">
-              Transforming businesses through the magic of artificial intelligence.
-              Julian Bradley - The Wizard of AI.
-            </p>
-            <div className="flex items-center gap-4">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-lg glass text-sm text-text-secondary hover:text-text-primary transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
             </div>
+            {/* Heading */}
+            <h3 className="text-2xl md:text-3xl font-bold">
+              <span className="gradient-text-aurora">Unlock the Power of AI</span>
+            </h3>
+          </div>
+        </div>
+
+        {/* Links Grid - 3 columns */}
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+          {/* Left - Quick Links */}
+          <div>
+            <h4 className="font-semibold text-text-primary mb-4">Quick Links</h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="#services" className="text-text-secondary hover:text-text-primary transition-colors">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="#results" className="text-text-secondary hover:text-text-primary transition-colors">
+                  Results
+                </a>
+              </li>
+              <li>
+                <a href="/templates" className="text-text-secondary hover:text-text-primary transition-colors">
+                  Templates
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="text-text-secondary hover:text-text-primary transition-colors">
+                  Contact
+                </a>
+              </li>
+            </ul>
           </div>
 
-          {/* Ventures */}
+          {/* Middle - Ventures */}
           <div>
             <h4 className="font-semibold text-text-primary mb-4">Ventures</h4>
             <ul className="space-y-3">
@@ -70,25 +88,23 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Quick links */}
+          {/* Right - Connect (Social Links) */}
           <div>
-            <h4 className="font-semibold text-text-primary mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-text-primary mb-4">Connect</h4>
             <ul className="space-y-3">
-              <li>
-                <a href="#services" className="text-text-secondary hover:text-text-primary transition-colors">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#results" className="text-text-secondary hover:text-text-primary transition-colors">
-                  Results
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-text-secondary hover:text-text-primary transition-colors">
-                  Contact
-                </a>
-              </li>
+              {socialLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors group"
+                  >
+                    {link.name}
+                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
