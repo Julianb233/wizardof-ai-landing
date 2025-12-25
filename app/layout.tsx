@@ -15,6 +15,28 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "WizardOf.ai - AI Automation Expert | Julian Bradley",
   description: "Transforming businesses through the magic of artificial intelligence. 10+ years of innovation. Proven results in AI automation and digital transformation.",
+  openGraph: {
+    title: "WizardOf.ai - AI Automation Expert | Julian Bradley",
+    description: "Transforming businesses through the magic of artificial intelligence. 10+ years of innovation. Proven results in AI automation and digital transformation.",
+    url: "https://wizardof-ai-landing.vercel.app",
+    siteName: "WizardOf.ai",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Julian Bradley - The Wizard of AI",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WizardOf.ai - AI Automation Expert | Julian Bradley",
+    description: "Transforming businesses through the magic of artificial intelligence. 10+ years of innovation. Proven results in AI automation and digital transformation.",
+    images: ["/opengraph-image.jpg"],
+  },
 };
 
 export default function RootLayout({
