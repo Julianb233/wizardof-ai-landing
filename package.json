@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:workflows": "tsx scripts/generate-workflow-jsons.ts",
+    "generate:og-image": "node scripts/create-og-from-hero.js"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

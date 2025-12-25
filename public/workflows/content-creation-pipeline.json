@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "id": "content-creation-pipeline",
+    "name": "Content Creation & Distribution Pipeline",
+    "version": "1.0.0",
+    "category": "content",
+    "description": "Multi-channel content workflow for creating, optimizing, and distributing marketing content across platforms with brand consistency.",
+    "difficulty": "intermediate",
+    "estimatedTime": "2-3 hours",
+    "generatedAt": "2025-12-25T04:09:05.741Z",
+    "compatibleWith": [
+      "Claude Flow",
+      "AI Agent Orchestration Systems",
+      "Multi-Agent Frameworks"
+    ]
+  },
+  "agents": [
+    {
+      "name": "Morgan-Marketing",
+      "required": true,
+      "role": "Marketing"
+    },
+    {
+      "name": "Bella-Branding",
+      "required": true,
+      "role": "Branding"
+    },
+    {
+      "name": "Scarlett-Script",
+      "required": true,
+      "role": "Script"
+    },
+    {
+      "name": "Sophie-Social",
+      "required": true,
+      "role": "Social"
+    },
+    {
+      "name": "Gina-Guide",
+      "required": true,
+      "role": "Guide"
+    }
+  ],
+  "workflow": {
+    "type": "sequential",
+    "description": "Automated content creation & distribution pipeline workflow",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Morgan-Marketing",
+        "action": "Research trending topics and competitor content for target audience"
+      },
+      {
+        "step": 2,
+        "agent": "Bella-Branding",
+        "action": "Ensure brand voice, tone, and visual guidelines are applied"
+      },
+      {
+        "step": 3,
+        "agent": "Scarlett-Script",
+        "action": "Create engaging video scripts with hooks, storytelling, and CTAs"
+      },
+      {
+        "step": 4,
+        "agent": "Sophie-Social",
+        "action": "Generate social media posts optimized for each platform (Twitter, LinkedIn, Instagram)"
+      },
+      {
+        "step": 5,
+        "agent": "Gina-Guide",
+        "action": "Write SEO-optimized blog posts and how-to guides"
+      },
+      {
+        "step": 6,
+        "agent": "Morgan-Marketing",
+        "action": "Optimize content for conversions with A/B testing recommendations"
+      },
+      {
+        "step": 7,
+        "agent": "Sophie-Social",
+        "action": "Schedule content distribution across channels with analytics tracking"
+      }
+    ]
+  },
+  "benefits": [
+    "Consistent brand voice across all content channels",
+    "SEO-optimized content for better search rankings",
+    "Multi-platform content adaptation (blog, social, video)",
+    "Data-driven content strategy with analytics integration",
+    "Automated content calendar and scheduling"
+  ],
+  "implementation": {
+    "difficulty": "intermediate",
+    "timeToImplement": "2-3 hours",
+    "prerequisites": [
+      "Brand guidelines document",
+      "Target audience personas defined",
+      "Social media accounts connected",
+      "Content management system (CMS) setup",
+      "Analytics tracking configured"
+    ]
+  },
+  "tags": [
+    "content",
+    "marketing",
+    "social-media",
+    "seo",
+    "branding"
+  ],
+  "license": {
+    "type": "MIT",
+    "terms": "Free to use with Wizard of AI subscription",
+    "attribution": "Powered by Wizard of AI Agent Templates"
+  }
+}

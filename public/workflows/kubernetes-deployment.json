@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "id": "kubernetes-deployment",
+    "name": "Kubernetes Deployment & Scaling",
+    "version": "1.0.0",
+    "category": "operations",
+    "description": "Production-grade Kubernetes deployment with auto-scaling, health checks, monitoring, and zero-downtime updates.",
+    "difficulty": "advanced",
+    "estimatedTime": "4-6 hours",
+    "generatedAt": "2025-12-25T04:09:05.742Z",
+    "compatibleWith": [
+      "Claude Flow",
+      "AI Agent Orchestration Systems",
+      "Multi-Agent Frameworks"
+    ]
+  },
+  "agents": [
+    {
+      "name": "Kirk-Kubernetes",
+      "required": true,
+      "role": "Kubernetes"
+    },
+    {
+      "name": "Petra-DevOps",
+      "required": true,
+      "role": "DevOps"
+    },
+    {
+      "name": "Sage-Security",
+      "required": true,
+      "role": "Security"
+    },
+    {
+      "name": "Otto-Observer",
+      "required": true,
+      "role": "Observer"
+    },
+    {
+      "name": "Diana-Debugger",
+      "required": true,
+      "role": "Debugger"
+    }
+  ],
+  "workflow": {
+    "type": "sequential",
+    "description": "Automated kubernetes deployment & scaling workflow",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Kirk-Kubernetes",
+        "action": "Design Kubernetes manifests: Deployments, Services, Ingress, ConfigMaps"
+      },
+      {
+        "step": 2,
+        "agent": "Petra-DevOps",
+        "action": "Configure CI/CD pipeline with automated testing and deployment"
+      },
+      {
+        "step": 3,
+        "agent": "Kirk-Kubernetes",
+        "action": "Implement horizontal pod autoscaling (HPA) based on metrics"
+      },
+      {
+        "step": 4,
+        "agent": "Sage-Security",
+        "action": "Configure network policies, RBAC, and secrets management"
+      },
+      {
+        "step": 5,
+        "agent": "Otto-Observer",
+        "action": "Set up Prometheus monitoring and Grafana dashboards"
+      },
+      {
+        "step": 6,
+        "agent": "Kirk-Kubernetes",
+        "action": "Implement rolling updates with health checks and readiness probes"
+      },
+      {
+        "step": 7,
+        "agent": "Diana-Debugger",
+        "action": "Test failover scenarios and disaster recovery procedures"
+      }
+    ]
+  },
+  "benefits": [
+    "Zero-downtime deployments with rolling updates",
+    "Automatic scaling based on CPU/memory/custom metrics",
+    "Comprehensive monitoring and alerting",
+    "Secure by default with network policies and RBAC",
+    "Production-ready infrastructure as code"
+  ],
+  "implementation": {
+    "difficulty": "advanced",
+    "timeToImplement": "4-6 hours",
+    "prerequisites": [
+      "Kubernetes cluster access (EKS, GKE, or AKS)",
+      "Docker images built and pushed to registry",
+      "Helm charts or Kustomize configurations",
+      "Monitoring stack installed (Prometheus, Grafana)",
+      "SSL certificates and DNS configured"
+    ]
+  },
+  "tags": [
+    "kubernetes",
+    "devops",
+    "deployment",
+    "scaling",
+    "monitoring"
+  ],
+  "license": {
+    "type": "MIT",
+    "terms": "Free to use with Wizard of AI subscription",
+    "attribution": "Powered by Wizard of AI Agent Templates"
+  }
+}

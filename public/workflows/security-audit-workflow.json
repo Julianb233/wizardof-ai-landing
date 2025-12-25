@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "id": "security-audit-workflow",
+    "name": "Comprehensive Security Audit",
+    "version": "1.0.0",
+    "category": "security",
+    "description": "Multi-layer security assessment covering code vulnerabilities, dependency scanning, penetration testing, and compliance verification.",
+    "difficulty": "advanced",
+    "estimatedTime": "3-5 hours",
+    "generatedAt": "2025-12-25T04:09:05.742Z",
+    "compatibleWith": [
+      "Claude Flow",
+      "AI Agent Orchestration Systems",
+      "Multi-Agent Frameworks"
+    ]
+  },
+  "agents": [
+    {
+      "name": "Sage-Security",
+      "required": true,
+      "role": "Security"
+    },
+    {
+      "name": "Rex-Reviewer",
+      "required": true,
+      "role": "Reviewer"
+    },
+    {
+      "name": "Dana-Database",
+      "required": true,
+      "role": "Database"
+    },
+    {
+      "name": "Petra-DevOps",
+      "required": true,
+      "role": "DevOps"
+    },
+    {
+      "name": "Gina-Guide",
+      "required": true,
+      "role": "Guide"
+    }
+  ],
+  "workflow": {
+    "type": "sequential",
+    "description": "Automated comprehensive security audit workflow",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Sage-Security",
+        "action": "Scan codebase for OWASP Top 10 vulnerabilities and security anti-patterns"
+      },
+      {
+        "step": 2,
+        "agent": "Sage-Security",
+        "action": "Analyze dependencies for known CVEs using npm audit and Snyk"
+      },
+      {
+        "step": 3,
+        "agent": "Rex-Reviewer",
+        "action": "Review authentication and authorization implementations"
+      },
+      {
+        "step": 4,
+        "agent": "Dana-Database",
+        "action": "Audit database security: SQL injection risks, access controls, encryption"
+      },
+      {
+        "step": 5,
+        "agent": "Petra-DevOps",
+        "action": "Review infrastructure security: secrets management, network policies, container security"
+      },
+      {
+        "step": 6,
+        "agent": "Sage-Security",
+        "action": "Perform penetration testing simulation for common attack vectors"
+      },
+      {
+        "step": 7,
+        "agent": "Gina-Guide",
+        "action": "Generate security report with findings, severity ratings, and remediation steps"
+      },
+      {
+        "step": 8,
+        "agent": "Sage-Security",
+        "action": "Create compliance checklist for GDPR, SOC2, and industry standards"
+      }
+    ]
+  },
+  "benefits": [
+    "Comprehensive security coverage across code, dependencies, and infrastructure",
+    "Automated vulnerability scanning with prioritized remediation",
+    "Compliance verification for GDPR, SOC2, HIPAA standards",
+    "Detailed security report with actionable recommendations",
+    "Continuous monitoring integration for ongoing security"
+  ],
+  "implementation": {
+    "difficulty": "advanced",
+    "timeToImplement": "3-5 hours",
+    "prerequisites": [
+      "Access to production and staging environments",
+      "Security scanning tools installed (Snyk, OWASP ZAP)",
+      "Secrets management system configured",
+      "CI/CD pipeline with security gates",
+      "Compliance requirements documented"
+    ]
+  },
+  "tags": [
+    "security",
+    "audit",
+    "compliance",
+    "penetration-testing",
+    "owasp"
+  ],
+  "license": {
+    "type": "MIT",
+    "terms": "Free to use with Wizard of AI subscription",
+    "attribution": "Powered by Wizard of AI Agent Templates"
+  }
+}

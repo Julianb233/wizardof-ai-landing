@@ -1,0 +1,147 @@
+{
+  "metadata": {
+    "id": "full-stack-development",
+    "name": "Full Stack Development Pipeline",
+    "version": "1.0.0",
+    "category": "coding",
+    "description": "End-to-end feature development workflow coordinating frontend, backend, testing, and deployment with multiple specialized agents.",
+    "difficulty": "advanced",
+    "estimatedTime": "2-4 hours",
+    "generatedAt": "2025-12-25T04:09:05.740Z",
+    "compatibleWith": [
+      "Claude Flow",
+      "AI Agent Orchestration Systems",
+      "Multi-Agent Frameworks"
+    ]
+  },
+  "agents": [
+    {
+      "name": "Marcus-Orchestrator",
+      "required": true,
+      "role": "Orchestrator"
+    },
+    {
+      "name": "Archie-Architect",
+      "required": true,
+      "role": "Architect"
+    },
+    {
+      "name": "Dana-Database",
+      "required": true,
+      "role": "Database"
+    },
+    {
+      "name": "Tyler-TypeScript",
+      "required": true,
+      "role": "TypeScript"
+    },
+    {
+      "name": "Fiona-Frontend",
+      "required": true,
+      "role": "Frontend"
+    },
+    {
+      "name": "Tessa-Tester",
+      "required": true,
+      "role": "Tester"
+    },
+    {
+      "name": "Rex-Reviewer",
+      "required": true,
+      "role": "Reviewer"
+    },
+    {
+      "name": "Sage-Security",
+      "required": true,
+      "role": "Security"
+    },
+    {
+      "name": "Petra-DevOps",
+      "required": true,
+      "role": "DevOps"
+    }
+  ],
+  "workflow": {
+    "type": "sequential",
+    "description": "Automated full stack development pipeline workflow",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Marcus-Orchestrator",
+        "action": "Break down feature requirements into frontend, backend, and database tasks"
+      },
+      {
+        "step": 2,
+        "agent": "Archie-Architect",
+        "action": "Design system architecture, API contracts, and database schema"
+      },
+      {
+        "step": 3,
+        "agent": "Dana-Database",
+        "action": "Create optimized database schema with migrations and indexes"
+      },
+      {
+        "step": 4,
+        "agent": "Tyler-TypeScript",
+        "action": "Implement backend API endpoints with TypeScript and proper type safety"
+      },
+      {
+        "step": 5,
+        "agent": "Fiona-Frontend",
+        "action": "Build responsive UI components with React, Next.js, and Tailwind CSS"
+      },
+      {
+        "step": 6,
+        "agent": "Tessa-Tester",
+        "action": "Write comprehensive unit, integration, and E2E tests with >90% coverage"
+      },
+      {
+        "step": 7,
+        "agent": "Rex-Reviewer",
+        "action": "Perform code review for quality, performance, and best practices"
+      },
+      {
+        "step": 8,
+        "agent": "Sage-Security",
+        "action": "Run security audit for vulnerabilities and OWASP compliance"
+      },
+      {
+        "step": 9,
+        "agent": "Petra-DevOps",
+        "action": "Deploy to production with CI/CD pipeline and monitoring setup"
+      }
+    ]
+  },
+  "benefits": [
+    "Coordinated multi-agent approach ensures consistency across stack layers",
+    "Built-in quality gates at each stage (testing, review, security)",
+    "Automated deployment pipeline reduces manual errors",
+    "Type-safe implementation from database to UI",
+    "Scalable architecture designed by specialized architect agent"
+  ],
+  "implementation": {
+    "difficulty": "advanced",
+    "timeToImplement": "2-4 hours",
+    "prerequisites": [
+      "Project initialized with Next.js or similar framework",
+      "Database connection configured (PostgreSQL/MySQL)",
+      "CI/CD pipeline setup (GitHub Actions)",
+      "Testing framework installed (Jest, Playwright)",
+      "Development and production environments"
+    ]
+  },
+  "tags": [
+    "full-stack",
+    "typescript",
+    "react",
+    "nextjs",
+    "testing",
+    "devops",
+    "popular"
+  ],
+  "license": {
+    "type": "MIT",
+    "terms": "Free to use with Wizard of AI subscription",
+    "attribution": "Powered by Wizard of AI Agent Templates"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "id": "project-orchestration",
+    "name": "Project Orchestration & Coordination",
+    "version": "1.0.0",
+    "category": "architecture",
+    "description": "Master orchestration workflow for coordinating multiple agents, managing dependencies, and ensuring project milestones are met.",
+    "difficulty": "advanced",
+    "estimatedTime": "4-6 hours",
+    "generatedAt": "2025-12-25T04:09:05.742Z",
+    "compatibleWith": [
+      "Claude Flow",
+      "AI Agent Orchestration Systems",
+      "Multi-Agent Frameworks"
+    ]
+  },
+  "agents": [
+    {
+      "name": "Marcus-Orchestrator",
+      "required": true,
+      "role": "Orchestrator"
+    },
+    {
+      "name": "Archie-Architect",
+      "required": true,
+      "role": "Architect"
+    },
+    {
+      "name": "Helena-Memory",
+      "required": true,
+      "role": "Memory"
+    },
+    {
+      "name": "Otto-Observer",
+      "required": true,
+      "role": "Observer"
+    },
+    {
+      "name": "Diana-Debugger",
+      "required": true,
+      "role": "Debugger"
+    },
+    {
+      "name": "Gina-Guide",
+      "required": true,
+      "role": "Guide"
+    }
+  ],
+  "workflow": {
+    "type": "sequential",
+    "description": "Automated project orchestration & coordination workflow",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Marcus-Orchestrator",
+        "action": "Parse project requirements and create task dependency graph"
+      },
+      {
+        "step": 2,
+        "agent": "Archie-Architect",
+        "action": "Design high-level architecture and define service boundaries"
+      },
+      {
+        "step": 3,
+        "agent": "Helena-Memory",
+        "action": "Load project context, team velocity, and historical patterns"
+      },
+      {
+        "step": 4,
+        "agent": "Marcus-Orchestrator",
+        "action": "Assign tasks to specialized agents based on capabilities and workload"
+      },
+      {
+        "step": 5,
+        "agent": "Otto-Observer",
+        "action": "Set up monitoring for agent progress, blockers, and completion status"
+      },
+      {
+        "step": 6,
+        "agent": "Marcus-Orchestrator",
+        "action": "Coordinate agent communication via shared memory namespaces"
+      },
+      {
+        "step": 7,
+        "agent": "Diana-Debugger",
+        "action": "Handle agent failures and blockers with automatic retry strategies"
+      },
+      {
+        "step": 8,
+        "agent": "Marcus-Orchestrator",
+        "action": "Aggregate agent outputs and ensure milestone completion"
+      },
+      {
+        "step": 9,
+        "agent": "Gina-Guide",
+        "action": "Generate project status report with completion metrics"
+      }
+    ]
+  },
+  "benefits": [
+    "Intelligent task routing based on agent capabilities and specializations",
+    "Parallel execution of independent tasks for faster completion",
+    "Automatic dependency management and task sequencing",
+    "Real-time progress monitoring with blocker detection",
+    "Scalable coordination for large multi-agent projects"
+  ],
+  "implementation": {
+    "difficulty": "advanced",
+    "timeToImplement": "4-6 hours",
+    "prerequisites": [
+      "Claude Flow memory system configured",
+      "Named agent registry populated",
+      "Agent capability mapping defined",
+      "Project management system integration (Linear, Notion)",
+      "Communication channels setup (Slack notifications)"
+    ]
+  },
+  "tags": [
+    "orchestration",
+    "coordination",
+    "project-management",
+    "multi-agent",
+    "architecture"
+  ],
+  "license": {
+    "type": "MIT",
+    "terms": "Free to use with Wizard of AI subscription",
+    "attribution": "Powered by Wizard of AI Agent Templates"
+  }
+}

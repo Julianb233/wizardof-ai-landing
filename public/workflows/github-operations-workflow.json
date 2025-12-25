@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "id": "github-operations-workflow",
+    "name": "GitHub Operations Automation",
+    "version": "1.0.0",
+    "category": "operations",
+    "description": "Automated GitHub workflow for issue tracking, PR management, code review, and CI/CD monitoring using GitHub MCP integration.",
+    "difficulty": "intermediate",
+    "estimatedTime": "1-2 hours",
+    "generatedAt": "2025-12-25T04:09:05.741Z",
+    "compatibleWith": [
+      "Claude Flow",
+      "AI Agent Orchestration Systems",
+      "Multi-Agent Frameworks"
+    ]
+  },
+  "agents": [
+    {
+      "name": "Marcus-Orchestrator",
+      "required": true,
+      "role": "Orchestrator"
+    },
+    {
+      "name": "Helena-Memory",
+      "required": true,
+      "role": "Memory"
+    },
+    {
+      "name": "Diana-Debugger",
+      "required": true,
+      "role": "Debugger"
+    },
+    {
+      "name": "Rex-Reviewer",
+      "required": true,
+      "role": "Reviewer"
+    },
+    {
+      "name": "Tessa-Tester",
+      "required": true,
+      "role": "Tester"
+    },
+    {
+      "name": "Gina-Guide",
+      "required": true,
+      "role": "Guide"
+    }
+  ],
+  "workflow": {
+    "type": "sequential",
+    "description": "Automated github operations automation workflow",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Marcus-Orchestrator",
+        "action": "Scan repository for new issues, PRs, and failed CI runs"
+      },
+      {
+        "step": 2,
+        "agent": "Helena-Memory",
+        "action": "Retrieve project context and recent development history"
+      },
+      {
+        "step": 3,
+        "agent": "Diana-Debugger",
+        "action": "Analyze failed CI/CD runs and identify root causes"
+      },
+      {
+        "step": 4,
+        "agent": "Rex-Reviewer",
+        "action": "Review open PRs for code quality, security, and best practices"
+      },
+      {
+        "step": 5,
+        "agent": "Tessa-Tester",
+        "action": "Add missing tests and improve test coverage for new code"
+      },
+      {
+        "step": 6,
+        "agent": "Gina-Guide",
+        "action": "Update documentation for new features and API changes"
+      },
+      {
+        "step": 7,
+        "agent": "Marcus-Orchestrator",
+        "action": "Create summary report and post to GitHub issue with findings"
+      }
+    ]
+  },
+  "benefits": [
+    "Automated PR review reduces manual code review time by 60%",
+    "Early detection of CI/CD failures with root cause analysis",
+    "Consistent code quality standards enforcement",
+    "Automatic documentation updates for new changes",
+    "Integration with GitHub API for seamless workflow"
+  ],
+  "implementation": {
+    "difficulty": "intermediate",
+    "timeToImplement": "1-2 hours",
+    "prerequisites": [
+      "GitHub repository with admin access",
+      "GitHub MCP server configured",
+      "CI/CD pipeline setup (GitHub Actions)",
+      "Branch protection rules configured",
+      "Test suite in place"
+    ]
+  },
+  "tags": [
+    "github",
+    "operations",
+    "automation",
+    "ci-cd",
+    "code-review"
+  ],
+  "license": {
+    "type": "MIT",
+    "terms": "Free to use with Wizard of AI subscription",
+    "attribution": "Powered by Wizard of AI Agent Templates"
+  }
+}

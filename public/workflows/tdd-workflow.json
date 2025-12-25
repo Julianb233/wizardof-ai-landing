@@ -1,0 +1,110 @@
+{
+  "metadata": {
+    "id": "tdd-workflow",
+    "name": "Test-Driven Development (TDD) Workflow",
+    "version": "1.0.0",
+    "category": "coding",
+    "description": "Implement features using strict TDD methodology: write tests first, implement minimal code, refactor for quality.",
+    "difficulty": "intermediate",
+    "estimatedTime": "1-2 hours per feature",
+    "generatedAt": "2025-12-25T04:09:05.743Z",
+    "compatibleWith": [
+      "Claude Flow",
+      "AI Agent Orchestration Systems",
+      "Multi-Agent Frameworks"
+    ]
+  },
+  "agents": [
+    {
+      "name": "Tessa-Tester",
+      "required": true,
+      "role": "Tester"
+    },
+    {
+      "name": "Tyler-TypeScript",
+      "required": true,
+      "role": "TypeScript"
+    },
+    {
+      "name": "Rex-Reviewer",
+      "required": true,
+      "role": "Reviewer"
+    },
+    {
+      "name": "Diana-Debugger",
+      "required": true,
+      "role": "Debugger"
+    }
+  ],
+  "workflow": {
+    "type": "sequential",
+    "description": "Automated test-driven development (tdd) workflow workflow",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Tessa-Tester",
+        "action": "Write failing tests that specify expected behavior (Red phase)"
+      },
+      {
+        "step": 2,
+        "agent": "Tyler-TypeScript",
+        "action": "Implement minimal code to make tests pass (Green phase)"
+      },
+      {
+        "step": 3,
+        "agent": "Rex-Reviewer",
+        "action": "Refactor code for readability, performance, and maintainability"
+      },
+      {
+        "step": 4,
+        "agent": "Tessa-Tester",
+        "action": "Add edge case tests and property-based tests"
+      },
+      {
+        "step": 5,
+        "agent": "Rex-Reviewer",
+        "action": "Review test coverage and suggest missing test scenarios"
+      },
+      {
+        "step": 6,
+        "agent": "Diana-Debugger",
+        "action": "Analyze test failures and identify regression issues"
+      },
+      {
+        "step": 7,
+        "agent": "Tessa-Tester",
+        "action": "Generate coverage report and ensure >90% code coverage"
+      }
+    ]
+  },
+  "benefits": [
+    "Higher code quality through test-first approach",
+    "Better design decisions driven by testability",
+    "Comprehensive test coverage from the start",
+    "Faster debugging with clear test specifications",
+    "Reduced regression bugs in production"
+  ],
+  "implementation": {
+    "difficulty": "intermediate",
+    "timeToImplement": "1-2 hours per feature",
+    "prerequisites": [
+      "Testing framework configured (Jest, Vitest)",
+      "Code coverage tools setup",
+      "CI/CD pipeline with test gates",
+      "Team agreement on TDD practices",
+      "Property-based testing library (fast-check)"
+    ]
+  },
+  "tags": [
+    "tdd",
+    "testing",
+    "quality-assurance",
+    "best-practices",
+    "coding"
+  ],
+  "license": {
+    "type": "MIT",
+    "terms": "Free to use with Wizard of AI subscription",
+    "attribution": "Powered by Wizard of AI Agent Templates"
+  }
+}

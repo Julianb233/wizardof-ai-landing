@@ -1,0 +1,135 @@
+{
+  "metadata": {
+    "id": "api-integration-research",
+    "name": "API Integration Research & Implementation",
+    "version": "1.0.0",
+    "category": "research",
+    "description": "Research-driven workflow for discovering, evaluating, and implementing third-party API integrations with MCP servers.",
+    "difficulty": "intermediate",
+    "estimatedTime": "2-4 hours",
+    "generatedAt": "2025-12-25T04:09:05.742Z",
+    "compatibleWith": [
+      "Claude Flow",
+      "AI Agent Orchestration Systems",
+      "Multi-Agent Frameworks"
+    ]
+  },
+  "agents": [
+    {
+      "name": "Helena-Memory",
+      "required": true,
+      "role": "Memory"
+    },
+    {
+      "name": "Marcus-Orchestrator",
+      "required": true,
+      "role": "Orchestrator"
+    },
+    {
+      "name": "Archie-Architect",
+      "required": true,
+      "role": "Architect"
+    },
+    {
+      "name": "Adam-API",
+      "required": true,
+      "role": "API"
+    },
+    {
+      "name": "Tyler-TypeScript",
+      "required": true,
+      "role": "TypeScript"
+    },
+    {
+      "name": "Tessa-Tester",
+      "required": true,
+      "role": "Tester"
+    },
+    {
+      "name": "Sage-Security",
+      "required": true,
+      "role": "Security"
+    },
+    {
+      "name": "Gina-Guide",
+      "required": true,
+      "role": "Guide"
+    }
+  ],
+  "workflow": {
+    "type": "sequential",
+    "description": "Automated api integration research & implementation workflow",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Helena-Memory",
+        "action": "Search existing integrations and API documentation in knowledge base"
+      },
+      {
+        "step": 2,
+        "agent": "Marcus-Orchestrator",
+        "action": "Research API capabilities, rate limits, and authentication methods"
+      },
+      {
+        "step": 3,
+        "agent": "Archie-Architect",
+        "action": "Design integration architecture and data flow patterns"
+      },
+      {
+        "step": 4,
+        "agent": "Adam-API",
+        "action": "Document API endpoints, request/response schemas, and error handling"
+      },
+      {
+        "step": 5,
+        "agent": "Tyler-TypeScript",
+        "action": "Implement MCP server with type-safe API client"
+      },
+      {
+        "step": 6,
+        "agent": "Tessa-Tester",
+        "action": "Create integration tests with mock API responses"
+      },
+      {
+        "step": 7,
+        "agent": "Sage-Security",
+        "action": "Audit API security: credential storage, rate limiting, data validation"
+      },
+      {
+        "step": 8,
+        "agent": "Gina-Guide",
+        "action": "Write usage documentation and example workflows"
+      }
+    ]
+  },
+  "benefits": [
+    "Systematic API evaluation and integration planning",
+    "Type-safe implementation with comprehensive error handling",
+    "Automated testing with mock servers for reliability",
+    "Security-first approach to credential management",
+    "Reusable MCP server for team-wide API access"
+  ],
+  "implementation": {
+    "difficulty": "intermediate",
+    "timeToImplement": "2-4 hours",
+    "prerequisites": [
+      "API credentials and documentation access",
+      "MCP server template project",
+      "TypeScript environment configured",
+      "Testing framework setup",
+      "Secrets management system"
+    ]
+  },
+  "tags": [
+    "api",
+    "integration",
+    "research",
+    "mcp",
+    "documentation"
+  ],
+  "license": {
+    "type": "MIT",
+    "terms": "Free to use with Wizard of AI subscription",
+    "attribution": "Powered by Wizard of AI Agent Templates"
+  }
+}

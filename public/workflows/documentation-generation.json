@@ -1,0 +1,119 @@
+{
+  "metadata": {
+    "id": "documentation-generation",
+    "name": "Automated Documentation Generation",
+    "version": "1.0.0",
+    "category": "content",
+    "description": "Generate comprehensive technical documentation including API references, architecture guides, and tutorials with code examples.",
+    "difficulty": "intermediate",
+    "estimatedTime": "2-3 hours",
+    "generatedAt": "2025-12-25T04:09:05.743Z",
+    "compatibleWith": [
+      "Claude Flow",
+      "AI Agent Orchestration Systems",
+      "Multi-Agent Frameworks"
+    ]
+  },
+  "agents": [
+    {
+      "name": "Helena-Memory",
+      "required": true,
+      "role": "Memory"
+    },
+    {
+      "name": "Adam-API",
+      "required": true,
+      "role": "API"
+    },
+    {
+      "name": "Gina-Guide",
+      "required": true,
+      "role": "Guide"
+    },
+    {
+      "name": "Archie-Architect",
+      "required": true,
+      "role": "Architect"
+    },
+    {
+      "name": "Tyler-TypeScript",
+      "required": true,
+      "role": "TypeScript"
+    },
+    {
+      "name": "Tessa-Tester",
+      "required": true,
+      "role": "Tester"
+    }
+  ],
+  "workflow": {
+    "type": "sequential",
+    "description": "Automated automated documentation generation workflow",
+    "steps": [
+      {
+        "step": 1,
+        "agent": "Helena-Memory",
+        "action": "Extract project context, architecture decisions, and API contracts"
+      },
+      {
+        "step": 2,
+        "agent": "Adam-API",
+        "action": "Generate OpenAPI/Swagger documentation from code annotations"
+      },
+      {
+        "step": 3,
+        "agent": "Gina-Guide",
+        "action": "Write getting started guides, tutorials, and best practices"
+      },
+      {
+        "step": 4,
+        "agent": "Archie-Architect",
+        "action": "Create architecture diagrams and system design documentation"
+      },
+      {
+        "step": 5,
+        "agent": "Tyler-TypeScript",
+        "action": "Generate code examples and usage snippets with proper typing"
+      },
+      {
+        "step": 6,
+        "agent": "Tessa-Tester",
+        "action": "Ensure all code examples are tested and working"
+      },
+      {
+        "step": 7,
+        "agent": "Gina-Guide",
+        "action": "Build searchable documentation site with versioning"
+      }
+    ]
+  },
+  "benefits": [
+    "Always up-to-date documentation generated from code",
+    "Consistent documentation format across projects",
+    "Interactive API documentation with try-it-now features",
+    "Tested code examples that actually work",
+    "Searchable and versioned documentation site"
+  ],
+  "implementation": {
+    "difficulty": "intermediate",
+    "timeToImplement": "2-3 hours",
+    "prerequisites": [
+      "Code annotations for API documentation",
+      "Documentation framework (Docusaurus, VitePress)",
+      "CI/CD pipeline for doc deployment",
+      "Examples directory with test coverage",
+      "Hosting platform (Vercel, Netlify, GitHub Pages)"
+    ]
+  },
+  "tags": [
+    "documentation",
+    "api-docs",
+    "technical-writing",
+    "automation"
+  ],
+  "license": {
+    "type": "MIT",
+    "terms": "Free to use with Wizard of AI subscription",
+    "attribution": "Powered by Wizard of AI Agent Templates"
+  }
+}
